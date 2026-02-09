@@ -5,21 +5,25 @@
 \alias{dkt}
 \title{Desikan-Killiany-Tourville Cortical Atlas}
 \format{
-ggseg brain-atlas
+A \link[ggseg.formats:ggseg_atlas]{ggseg.formats::ggseg_atlas} object (cortical).
 }
 \usage{
 data(dkt)
 }
 \description{
-Coordinate data for the Desikan-Killany-Tourville Cortical atlas,
-with 31 regions in on the cortical surface of the brain.
+Brain atlas for the Desikan-Killiany-Tourville cortical parcellation
+with 31 regions per hemisphere. Contains both 2D polygon geometry
+for \code{\link[ggseg:ggseg]{ggseg::ggseg()}} and 3D vertex indices for \code{\link[ggseg3d:ggseg3d]{ggseg3d::ggseg3d()}}.
 }
 \examples{
 data(dkt)
+dkt
 }
 \references{
-101 labeled brain images and a consistent human cortical labeling protocol. Arno Klein, Jason Tourville. Frontiers in Brain Imaging Methods. 6:171. DOI: 10.3389/fnins.2012.00171
-(\href{https://doi.org/10.3389/fnins.2012.00171}{PubMed})
+Klein A, Tourville J (2012). 101 labeled brain images and a
+consistent human cortical labeling protocol.
+\emph{Frontiers in Neuroscience}, 6:171.
+\doi{10.3389/fnins.2012.00171}
 }
 \concept{ggseg_atlases}
 \keyword{datasets}
