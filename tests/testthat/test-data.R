@@ -1,62 +1,35 @@
-# ggseg ----
+describe("dkt atlas", {
+  it("is a ggseg_atlas", {
+    expect_s3_class(dkt, "ggseg_atlas")
+    expect_s3_class(dkt, "cortical_atlas")
+  })
 
-library(ggseg, quietly = TRUE, warn.conflicts = FALSE)
-library(ggseg3d, quietly = TRUE, warn.conflicts = FALSE)
-library(ggplot2, quietly = TRUE, warn.conflicts = FALSE)
+  it("is valid", {
+    expect_true(ggseg.formats::is_ggseg_atlas(dkt))
+  })
 
-context("test-palettes")
-test_that("check new palettes work", {
-  expect_equal(length(brain_pal("dkt", package = "ggsegDKT")), 31)
+  it("renders with ggseg", {
+    skip_if_not_installed("ggseg")
+    skip_if_not_installed("ggplot2")
+    skip_if_not_installed("vdiffr")
+    p <- ggplot2::ggplot() +
+      ggseg::geom_brain(
+        atlas = dkt,
+        mapping = ggplot2::aes(fill = label),
+        position = ggseg::position_brain(hemi ~ view),
+        show.legend = FALSE
+      ) +
+      ggplot2::scale_fill_manual(
+        values = dkt$palette,
+        na.value = "grey"
+      ) +
+      ggplot2::theme_void()
+    vdiffr::expect_doppelganger("dkt-2d", p)
+  })
 
-  expect_error(brain_pal("dkt"), "not a valid")
-
-  expect_true(all(names(brain_pal("dkt", package = "ggsegDKT")) %in% brain_regions(dkt)))
-})
-
-context("test-ggseg-atlas")
-test_that("atlases are true ggseg atlases", {
-
-  expect_true(is_brain_atlas(dkt))
-
-})
-
-context("test-ggseg")
-test_that("Check that polygon atlases are working", {
-  expect_is(ggseg(atlas = dkt),c("gg","ggplot"))
-
-  expect_is(ggseg(atlas = dkt, mapping = aes(fill = region)),
-            c("gg","ggplot"))
-
-  expect_is(ggseg(atlas = dkt, mapping = aes(fill = region)) +
-              scale_fill_brain("dkt", package = "ggsegDKT"),
-            c("gg","ggplot"))
-
-  expect_is(ggseg(atlas = dkt, mapping = aes(fill = region)) +
-              scale_fill_brain("dkt", package = "ggsegDKT"),
-            c("gg","ggplot"))
-
-  expect_is(ggseg(atlas = dkt, mapping=aes(fill=area),
-                  position="stacked"), c("gg","ggplot"))
-
-  expect_is(ggseg(atlas = dkt, mapping=aes(fill=area), adapt_scales = F ),c("gg","ggplot"))
-
-})
-
-
-# ggseg3d ----
-context("test-ggseg3d")
-test_that("Check that mesh atlases are working", {
-  expect_is(
-    ggseg3d(atlas=dkt_3d),
-    c("plotly", "htmlwidget")
-  )
-})
-
-
-
-context("test-ggseg3d-atlas")
-test_that("atlases are true ggseg3d atlases", {
-
-  expect_true(is_ggseg3d_atlas(dkt_3d))
-
+  it("renders with ggseg3d", {
+    skip_if_not_installed("ggseg3d")
+    p <- ggseg3d::ggseg3d(atlas = dkt)
+    expect_s3_class(p, c("plotly", "htmlwidget"))
+  })
 })

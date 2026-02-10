@@ -1,0 +1,157 @@
+###  dkt 
+
+```
+# A tibble: 62 × 3
+   hemi  region                label                  
+   <chr> <chr>                 <chr>                  
+ 1 left  caudal middle frontal lh_caudalmiddlefrontal 
+ 2 left  fusiform              lh_fusiform            
+ 3 left  inferior parietal     lh_inferiorparietal    
+ 4 left  inferior temporal     lh_inferiortemporal    
+ 5 left  lateral occipital     lh_lateraloccipital    
+ 6 left  lateral orbitofrontal lh_lateralorbitofrontal
+ 7 left  middle temporal       lh_middletemporal      
+ 8 left  pars opercularis      lh_parsopercularis     
+ 9 left  pars orbitalis        lh_parsorbitalis       
+10 left  pars triangularis     lh_parstriangularis    
+# ℹ 52 more rows
+```
+
+<details><summary>Core table</summary>
+
+```
+   hemi  region                     label                      
+1  left  caudal middle frontal      lh_caudalmiddlefrontal     
+2  left  fusiform                   lh_fusiform                
+3  left  inferior parietal          lh_inferiorparietal        
+4  left  inferior temporal          lh_inferiortemporal        
+5  left  lateral occipital          lh_lateraloccipital        
+6  left  lateral orbitofrontal      lh_lateralorbitofrontal    
+7  left  middle temporal            lh_middletemporal          
+8  left  pars opercularis           lh_parsopercularis         
+9  left  pars orbitalis             lh_parsorbitalis           
+10 left  pars triangularis          lh_parstriangularis        
+11 left  postcentral                lh_postcentral             
+12 left  precentral                 lh_precentral              
+13 left  rostral middle frontal     lh_rostralmiddlefrontal    
+14 left  superior frontal           lh_superiorfrontal         
+15 left  superior parietal          lh_superiorparietal        
+16 left  superior temporal          lh_superiortemporal        
+17 left  supramarginal              lh_supramarginal           
+18 left  transverse temporal        lh_transversetemporal      
+19 left  insula                     lh_insula                  
+20 left  caudal anterior cingulate  lh_caudalanteriorcingulate 
+21 left  cuneus                     lh_cuneus                  
+22 left  entorhinal                 lh_entorhinal              
+23 left  isthmus cingulate          lh_isthmuscingulate        
+24 left  lingual                    lh_lingual                 
+25 left  medial orbitofrontal       lh_medialorbitofrontal     
+26 left  parahippocampal            lh_parahippocampal         
+27 left  paracentral                lh_paracentral             
+28 left  pericalcarine              lh_pericalcarine           
+29 left  posterior cingulate        lh_posteriorcingulate      
+30 left  precuneus                  lh_precuneus               
+31 left  rostral anterior cingulate lh_rostralanteriorcingulate
+32 right caudal anterior cingulate  rh_caudalanteriorcingulate 
+33 right cuneus                     rh_cuneus                  
+34 right entorhinal                 rh_entorhinal              
+35 right fusiform                   rh_fusiform                
+36 right inferior temporal          rh_inferiortemporal        
+37 right isthmus cingulate          rh_isthmuscingulate        
+38 right lateral occipital          rh_lateraloccipital        
+39 right lateral orbitofrontal      rh_lateralorbitofrontal    
+40 right lingual                    rh_lingual                 
+41 right medial orbitofrontal       rh_medialorbitofrontal     
+42 right parahippocampal            rh_parahippocampal         
+43 right paracentral                rh_paracentral             
+44 right pericalcarine              rh_pericalcarine           
+45 right postcentral                rh_postcentral             
+46 right posterior cingulate        rh_posteriorcingulate      
+47 right precentral                 rh_precentral              
+48 right precuneus                  rh_precuneus               
+49 right rostral anterior cingulate rh_rostralanteriorcingulate
+50 right superior frontal           rh_superiorfrontal         
+51 right superior parietal          rh_superiorparietal        
+52 right superior temporal          rh_superiortemporal        
+53 right insula                     rh_insula                  
+54 right caudal middle frontal      rh_caudalmiddlefrontal     
+55 right inferior parietal          rh_inferiorparietal        
+56 right middle temporal            rh_middletemporal          
+57 right pars opercularis           rh_parsopercularis         
+58 right pars orbitalis             rh_parsorbitalis           
+59 right pars triangularis          rh_parstriangularis        
+60 right rostral middle frontal     rh_rostralmiddlefrontal    
+61 right supramarginal              rh_supramarginal           
+62 right transverse temporal        rh_transversetemporal      
+```
+
+</details>
+
+<details><summary>Palette</summary>
+
+```
+ lh_caudalanteriorcingulate      lh_caudalmiddlefrontal 
+                  "#7D64A0"                   "#641900" 
+                  lh_cuneus               lh_entorhinal 
+                  "#DC1464"                   "#DC140A" 
+                lh_fusiform         lh_inferiorparietal 
+                  "#B4DC8C"                   "#DC3CDC" 
+        lh_inferiortemporal         lh_isthmuscingulate 
+                  "#B42878"                   "#8C148C" 
+        lh_lateraloccipital     lh_lateralorbitofrontal 
+                  "#141E8C"                   "#234B32" 
+                 lh_lingual      lh_medialorbitofrontal 
+                  "#E18C8C"                   "#C8234B" 
+          lh_middletemporal          lh_parahippocampal 
+                  "#A06432"                   "#14DC3C" 
+             lh_paracentral          lh_parsopercularis 
+                  "#3CDC3C"                   "#DCB48C" 
+           lh_parsorbitalis         lh_parstriangularis 
+                  "#146432"                   "#DC3C14" 
+           lh_pericalcarine              lh_postcentral 
+                  "#78643C"                   "#DC1414" 
+      lh_posteriorcingulate               lh_precentral 
+                  "#DCB4DC"                   "#3C14DC" 
+               lh_precuneus lh_rostralanteriorcingulate 
+                  "#A08CB4"                   "#50148C" 
+    lh_rostralmiddlefrontal          lh_superiorfrontal 
+                  "#4B327D"                   "#14DCA0" 
+        lh_superiorparietal         lh_superiortemporal 
+                  "#14B48C"                   "#8CDCDC" 
+           lh_supramarginal       lh_transversetemporal 
+                  "#50A014"                   "#9696C8" 
+                  lh_insula  rh_caudalanteriorcingulate 
+                  "#FFC020"                   "#7D64A0" 
+     rh_caudalmiddlefrontal                   rh_cuneus 
+                  "#641900"                   "#DC1464" 
+              rh_entorhinal                 rh_fusiform 
+                  "#DC140A"                   "#B4DC8C" 
+        rh_inferiorparietal         rh_inferiortemporal 
+                  "#DC3CDC"                   "#B42878" 
+        rh_isthmuscingulate         rh_lateraloccipital 
+                  "#8C148C"                   "#141E8C" 
+    rh_lateralorbitofrontal                  rh_lingual 
+                  "#234B32"                   "#E18C8C" 
+     rh_medialorbitofrontal           rh_middletemporal 
+                  "#C8234B"                   "#A06432" 
+         rh_parahippocampal              rh_paracentral 
+                  "#14DC3C"                   "#3CDC3C" 
+         rh_parsopercularis            rh_parsorbitalis 
+                  "#DCB48C"                   "#146432" 
+        rh_parstriangularis            rh_pericalcarine 
+                  "#DC3C14"                   "#78643C" 
+             rh_postcentral       rh_posteriorcingulate 
+                  "#DC1414"                   "#DCB4DC" 
+              rh_precentral                rh_precuneus 
+                  "#3C14DC"                   "#A08CB4" 
+rh_rostralanteriorcingulate     rh_rostralmiddlefrontal 
+                  "#50148C"                   "#4B327D" 
+         rh_superiorfrontal         rh_superiorparietal 
+                  "#14DCA0"                   "#14B48C" 
+        rh_superiortemporal            rh_supramarginal 
+                  "#8CDCDC"                   "#50A014" 
+      rh_transversetemporal                   rh_insula 
+                  "#9696C8"                   "#FFC020" 
+```
+
+</details>

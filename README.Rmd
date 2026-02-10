@@ -16,19 +16,24 @@ knitr::opts_chunk$set(
 # ggsegDKT <img src='man/figures/logo.png' align="right" height="138.5" />
 
 <!-- badges: start -->
-[![R build status](https://github.com/LCBC-UiO/ggsegDKT/workflows/R-CMD-check/badge.svg)](https://github.com/LCBC-UiO/ggsegDKT/actions)
+[![R build status](https://github.com/ggseg/ggsegDKT/workflows/R-CMD-check/badge.svg)](https://github.com/ggseg/ggsegDKT/actions)
 [![DOI](https://zenodo.org/badge/314486110.svg)](https://zenodo.org/badge/latestdoi/314486110)
-
 <!-- badges: end -->
-This package contains dataset for plotting the Shaefer cortical atlas ggseg and ggseg3d. 
+
+This package contains the Desikan-Killiany-Tourville (DKT) cortical atlas
+for plotting with ggseg and ggseg3d.
+
+Klein A, Tourville J (2012). "101 labeled brain images and a consistent
+human cortical labeling protocol." *Frontiers in Neuroscience*, 6:171.
+doi: [10.3389/fnins.2012.00171](https://doi.org/10.3389/fnins.2012.00171)
 
 ## Installation
 
-You can install the released version of ggsegDKT from [GitHub](https://github.com/) with:
+You can install ggsegDKT from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("remotes")
-remotes::install_github("LCBC-UiO/ggsegDKT")
+remotes::install_github("ggseg/ggsegDKT")
 ```
 
 ## Example
@@ -37,42 +42,30 @@ remotes::install_github("LCBC-UiO/ggsegDKT")
 library(ggsegDKT)
 ```
 
-```{r, fig.height=10}
+```{r "dkt-2d", fig.height = 6}
 library(ggseg)
 library(ggplot2)
 
-plot(dkt) +
-  theme(legend.position = "bottom",
-        legend.text = element_text(size = 7)) +
-  guides(fill = guide_legend(ncol = 4))
+ggplot() +
+  geom_brain(
+    atlas = dkt,
+    mapping = aes(fill = label),
+    position = position_brain(hemi ~ view),
+    show.legend = FALSE
+  ) +
+  scale_fill_manual(values = dkt$palette, na.value = "grey") +
+  theme_void()
 ```
 
-```{r "noneval", eval=FALSE}
+```{r "dkt-3d", eval = FALSE}
 library(ggseg3d)
-library(dplyr)
 
-ggseg3d(atlas = dkt7_3d) %>% 
+ggseg3d(atlas = dkt) |>
   pan_camera("right lateral")
-```
-
-```{r "orca", include=FALSE}
-library(ggseg3d)
-library(dplyr)
-
-p <- ggseg3d(atlas = dkt_3d) %>%
-  pan_camera("right lateral") %>%
-  plotly::add_annotations( text="Screen capture",
-                  legendtitle=TRUE, showarrow=FALSE,
-                  font = list(color = "#000000b4",
-                              family = 'sans serif',
-                              size = 50))
-plotly::orca(p, "man/figures/README-s7-3d-plot.png")
-```
-
-```{r "incl", echo=FALSE}
-knitr::include_graphics("man/figures/README-s7-3d-plot.png")
 ```
 
 ## Code of Conduct
 
-Please note that the ggsegDKT project is released with a [Contributor Code of Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
+Please note that the ggsegDKT project is released with a
+[Contributor Code of Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html).
+By contributing to this project, you agree to abide by its terms.
