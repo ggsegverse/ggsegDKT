@@ -13,10 +13,12 @@ Description: This is a support package for the ggseg, and ggseg3d packages.
     It contains the DKT atlases to plot using functions from those two packages.
 License: CC0
 Encoding: UTF-8
-Depends: 
-    R (>= 2.10)
+Depends:
+    R (>= 3.5)
+Imports:
+    ggseg.formats
 RoxygenNote: 7.3.3
-Suggests: 
+Suggests:
     ggseg,
     ggseg3d,
     ggplot2,
