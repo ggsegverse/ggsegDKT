@@ -22,23 +22,23 @@ test_that("atlases are true ggseg atlases", {
 
 context("test-ggseg")
 test_that("Check that polygon atlases are working", {
-  expect_is(ggseg(atlas = dkt),c("gg","ggplot"))
+  expect_is(ggseg(atlas = dkt()),c("gg","ggplot"))
 
-  expect_is(ggseg(atlas = dkt, mapping = aes(fill = region)),
+  expect_is(ggseg(atlas = dkt(), mapping = aes(fill = region)),
             c("gg","ggplot"))
 
-  expect_is(ggseg(atlas = dkt, mapping = aes(fill = region)) +
+  expect_is(ggseg(atlas = dkt(), mapping = aes(fill = region)) +
               scale_fill_brain("dkt", package = "ggsegDKT"),
             c("gg","ggplot"))
 
-  expect_is(ggseg(atlas = dkt, mapping = aes(fill = region)) +
+  expect_is(ggseg(atlas = dkt(), mapping = aes(fill = region)) +
               scale_fill_brain("dkt", package = "ggsegDKT"),
             c("gg","ggplot"))
 
-  expect_is(ggseg(atlas = dkt, mapping=aes(fill=area),
+  expect_is(ggseg(atlas = dkt(), mapping=aes(fill=area),
                   position="stacked"), c("gg","ggplot"))
 
-  expect_is(ggseg(atlas = dkt, mapping=aes(fill=area), adapt_scales = F ),c("gg","ggplot"))
+  expect_is(ggseg(atlas = dkt(), mapping=aes(fill=area), adapt_scales = F ),c("gg","ggplot"))
 
 })
 
@@ -47,7 +47,7 @@ test_that("Check that polygon atlases are working", {
 context("test-ggseg3d")
 test_that("Check that mesh atlases are working", {
   expect_is(
-    ggseg3d(atlas=dkt_3d),
+    ggseg3d(atlas = dkt_3d()),
     c("plotly", "htmlwidget")
   )
 })

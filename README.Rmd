@@ -41,7 +41,7 @@ library(ggsegDKT)
 library(ggseg)
 library(ggplot2)
 
-plot(dkt) +
+plot(dkt()) +
   theme(legend.position = "bottom",
         legend.text = element_text(size = 7)) +
   guides(fill = guide_legend(ncol = 4))
@@ -59,7 +59,7 @@ ggseg3d(atlas = dkt7_3d) %>%
 library(ggseg3d)
 library(dplyr)
 
-p <- ggseg3d(atlas = dkt_3d) %>%
+p <- ggseg3d(atlas = dkt()()) %>%
   pan_camera("right lateral") %>%
   plotly::add_annotations( text="Screen capture",
                   legendtitle=TRUE, showarrow=FALSE,
