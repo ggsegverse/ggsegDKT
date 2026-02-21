@@ -10,8 +10,10 @@ dkt()
 A [ggseg.formats::ggseg_atlas] object (cortical).
 }
 \description{
-Coordinate data for the Desikan-Killany-Tourville Cortical atlas,
-with 31 regions in on the cortical surface of the brain.
+Cortical parcellation with 32 regions per hemisphere based on the
+Desikan-Killiany-Tourville labeling protocol. Contains both 2D
+polygon geometry for [ggseg::geom_brain()] and 3D vertex indices
+for [ggseg3d::ggseg3d()].
 }
 \examples{
 dkt()
