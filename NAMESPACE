@@ -2,3 +2,4 @@
 
 export(dkt)
 export(dkt_3d)
+import(ggseg.formats)

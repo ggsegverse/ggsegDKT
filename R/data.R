@@ -11,6 +11,7 @@
 #'   \doi{10.3389/fnins.2012.00171}
 #'
 #' @return A [ggseg.formats::ggseg_atlas] object (cortical).
+#' @import ggseg.formats
 #' @export
 #' @examples
 #' dkt()
